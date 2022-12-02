@@ -1,4 +1,8 @@
 import pandas as pd
+import stremlit as st
+
+st.title('floresta randomica para doença coraçao')
+
 dados = pd.read_csv('/content/drive/MyDrive/IA COVID/heart.csv')
 dados.head()
 nomes_colunas = dados.columns.to_list()
@@ -29,6 +33,8 @@ from sklearn.ensemble import RandomForestClassifier
 import pandas as pd 
 
 floresta = RandomForestClassifier(n_estimators=1000) #constroi a floresta
+
+st.write('floresta pronta')
 #treinar a floresta
 floresta.fit(features_treino,classes_treino)
 
