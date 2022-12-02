@@ -1,7 +1,7 @@
 import pandas as pd
-import stremlit as st
+import streamlit as st
 
-st.title('floresta randomica para doença coraçao')
+st.title('floresta randomica HEART DESEASE')
 
 dados = pd.read_csv('/content/drive/MyDrive/IA COVID/heart.csv')
 dados.head()
