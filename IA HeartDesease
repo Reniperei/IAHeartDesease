@@ -1,0 +1,29 @@
+import pandas as pd
+dados = pd.read_csv('/content/drive/MyDrive/IA COVID/heart.csv')
+dados.head()
+nomes_colunas = dados.columns.to_list()
+nomes_colunas = nomes_colunas[:len(nomes_colunas)-1]
+
+features = dados[nomes_colunas]
+classes = dados['HeartDisease']
+
+from sklearn.preprocessing import OrdinalEncoder
+
+encoder = OrdinalEncoder
+
+features['Sex'] = encoder.fit_transform(pd.DataFrame(features['Sex']))
+features['ChestPainType'] = encoder.fit_transform(pd.DataFrame(features['ChestPainType']))
+features['RestingECG'] = encoder.fit_transform(pd.DataFrame(features['RestingECG']))
+features['ExerciseAngina'] = encoder.fit_transform(pd.DataFrame(features['ExerciseAngina']))
+features['St_Slope'] = encoder.fit_transform(pd.DataFrame(features['St_Slope']))
+
+features = features.fillna(0)
+
+
+
+
+
+
+
+
+
